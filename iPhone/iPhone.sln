@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPhone", "iPhone\iPhone.csproj", "{BBB272A5-D077-48CD-A29E-2C53489A9EAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBB272A5-D077-48CD-A29E-2C53489A9EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB272A5-D077-48CD-A29E-2C53489A9EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB272A5-D077-48CD-A29E-2C53489A9EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB272A5-D077-48CD-A29E-2C53489A9EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E2ABF67-4AF5-41B3-8B2C-A52715F264F6}
+	EndGlobalSection
+EndGlobal

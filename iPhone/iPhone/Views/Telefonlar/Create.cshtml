@@ -1,0 +1,74 @@
+﻿@model CreateViewTelefon;
+@{
+    ViewData["Title"] = "Create telefon";
+}
+
+<div class="container shadow p-5">
+    <div class="row  pb-2">
+        <h1>Add Product</h1>
+    </div>
+
+    
+    <form method="post" class="form-floating" enctype="multipart/form-data">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Model" placeholder="Model adını yazınız." />
+            <label asp-for="Model">Model</label>
+            <span asp-validation-for="Model" class="alert-danger"></span>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Ekran" placeholder="Ekran yazınız." />
+            <label asp-for="Ekran">Ekran</label>
+            <span asp-validation-for="Ekran" class="alert-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="İşlemci" placeholder="İşlemci yazınız." />
+            <label asp-for="İşlemci">İşlemci</label>
+            <span asp-validation-for="İşlemci" class="alert-danger"></span>
+        </div>
+        
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Kamera" placeholder="Kamerayazınız." />
+            <label asp-for="Kamera">Kamera</label>
+            <span asp-validation-for="Kamera" class="alert-danger"></span>
+        </div>
+
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Renk" placeholder="Renk yazınız." />
+            <label asp-for="Renk">Renk</label>
+            <span asp-validation-for="Renk" class="alert-danger"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="Fiyatı" placeholder="Fiyatı yazınız." />
+            <label asp-for="Fiyatı">Fiyatı</label>
+            <span asp-validation-for="Fiyatı" class="alert-danger"></span>
+        </div>
+
+
+        <div class="form-floating mb-3">
+            <input type="file" class="form-control  custom-file-input" asp-for="Photo" placeholder="Ürün fotoğrafını seçiniz." />
+            <label asp-for="Photo" class="custom-file-label">Photo</label>
+            <span asp-validation-for="Photo" class="alert-danger"></span>
+        </div>
+        
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <a asp-action="Index" class="btn btn-primary">Back To List</a>
+
+
+        @section Scripts {
+            <script>
+                $(document).ready(function () {
+                    $('.custom-file-input').on("change", function () {
+                        var fileName = $(this).val().split("\\").pop();
+                        $(this).next('.custom-file-label').html(fileName);
+                    });
+                });
+            </script>
+        }
+    </form>
+</div>

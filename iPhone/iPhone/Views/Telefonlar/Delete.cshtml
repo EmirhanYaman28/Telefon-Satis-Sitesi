@@ -1,0 +1,50 @@
+﻿@model Telefon
+
+@{
+    ViewData["Title"] = "Görüntüe Kurs";
+}
+
+
+<title></title>
+
+<style>
+    .imageThumbnail {
+        max-width: 150px; /* Maksimum genişlik */
+        max-height: 300px; /* Maksimum yükseklik */
+    }
+</style>
+
+<div class="container shadow p-5">
+    <h1 class="text-center"><b>Kurs Bilgi</b></h1>
+
+
+
+        <form method="post" asp-action="DeleteProduct">
+        <input asp-for="Id" hidden />  
+    <div class="card shadow p-3">
+        <div class="card-body">
+            <!-- Resim ekleme kısmı -->
+            <div class="card-body text-center">
+                <img class="card-img-top imageThumbnail" src="~/images/@(Model.PhotoPath ?? "noimage.jpg")" asp-append-version="true" />
+            </div>
+
+            <a><h4 class="card-title text-center">@Model.Model</h4></a>
+            <hr />
+            <div class="card-text"><strong>Açıklaması: </strong>@Model.Ekran</div>
+            <hr />
+            <div class="card-text"><strong>Kategorisi: </strong>@Model.İşlemci</div>
+            <hr />
+            <div class="card-text"><strong>Öğretmeni: </strong>@Model.Kamera</div>
+            <hr />
+            <div class="card-text"><strong>Süresi: </strong>@Model.Renk</div>
+            <hr />
+            <h6 class="card-text"><strong>Fiyat: </strong>@Model.Fiyatı</h6>
+
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    </form>
+    <br />
+
+    <a asp-action="Index" type="button" class="btn btn-dark">Listeye Geri Dön</a>
+</div>

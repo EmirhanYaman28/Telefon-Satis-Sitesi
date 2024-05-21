@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Telefon>
+@{
+    ViewData["Title"] = "Category List";
+}
+
+<title></title>
+
+<style>
+    .imageThumbnail {
+        max-width: 50px; /* Maksimum genişlik */
+        max-height: 100px; /* Maksimum yükseklik */
+    }
+</style>
+
+<div class="container shadow p-5">
+
+    <h1 class="text-center">iPhone Satış Sitesi</h1>
+    <div class="col mb-3">
+        <a asp-action="Create" class="btn btn-primary">
+            Telefon Ekle
+        </a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Model Adı</th>
+                <th scope="col">Ekran Boyutu</th>
+                <th scope="col">İşlemci</th>
+                <th scope="col">İşlemci </th>
+                <th scope="col">Kamera Çözünürlük </th>
+                <th scope="col">Renk </th>
+                <th scope="col">Fiyat </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var photoPath = "~/images/" + (item.PhotoPath ?? "noimage.jpg");
+
+                <tr>
+                    <td width="%30" class="text-center" style="line-height:150px">
+                        @item.Model
+                    </td>
+                    <td width="%40" class="text-center" style="line-height:150px">
+                        @item.Ekran
+                    </td>
+
+                    <td width="%30" class="text-center" style="line-height:150px">
+                        @item.İşlemci
+                    </td>
+                    <td width="%40" class="text-center" style="line-height:150px" >
+                        @item.Kamera
+                    </td>
+
+                    <td width="%30" class="text-center" style="line-height:150px">
+                        @item.Renk
+                    </td>
+                    <td width="%40" class="text-center" style="line-height:150px" >
+                        @item.Fiyatı
+                    </td>
+
+                    <td width="20%" class="text-center" style="line-height:150px" >
+
+                        <div class="card-body text-center">
+                            <a href="/Telefonlar/Görüntüle/@item.Id">
+                                <img class="card-img-top imageThumbnail" src="@photoPath" asp-append-version="true" />
+                            </a>
+                        </div>
+
+                    </td>
+
+
+                    <td width="%30">
+                        <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-success">Düzenle</a>
+
+                        <a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">
+                            Sil
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
